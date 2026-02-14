@@ -1,0 +1,10 @@
+{
+    "actorSpecification": 1,
+    "name": "ai-content-crawler",
+    "title": "AI Content Crawler",
+    "description": "Crawl any website and get clean, AI-ready content in markdown format. Perfect for RAG pipelines, LLM training data, and vector database ingestion. Features smart chunking, metadata extraction, and multiple output formats.",
+    "version": "0.1",
+    "buildTag": "latest",
+    "input": "./input_schema.json",
+    "dockerfile": "./Dockerfile"
+}

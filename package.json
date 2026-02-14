@@ -1,0 +1,22 @@
+{
+  "name": "ai-content-crawler",
+  "version": "0.1.0",
+  "description": "AI-ready content crawler that converts any website to clean markdown/structured data for LLM pipelines, RAG, and vector databases",
+  "type": "module",
+  "scripts": {
+    "start": "node dist/main.js",
+    "build": "tsc",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "crawlee": "^3.12.0",
+    "@mozilla/readability": "^0.5.0",
+    "turndown": "^7.2.0",
+    "linkedom": "^0.18.0",
+    "apify": "^3.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "@types/turndown": "^5.0.5"
+  }
+}

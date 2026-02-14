@@ -1,0 +1,79 @@
+{
+    "title": "AI Content Crawler Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "startUrls": {
+            "title": "Start URLs",
+            "type": "array",
+            "description": "URLs to start crawling from",
+            "editor": "requestListSources",
+            "prefill": [{ "url": "https://docs.apify.com" }]
+        },
+        "maxPages": {
+            "title": "Max pages",
+            "type": "integer",
+            "description": "Maximum number of pages to crawl",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 10000
+        },
+        "maxDepth": {
+            "title": "Max crawl depth",
+            "type": "integer",
+            "description": "Maximum link depth from start URLs",
+            "default": 3,
+            "minimum": 0,
+            "maximum": 20
+        },
+        "outputFormat": {
+            "title": "Output format",
+            "type": "string",
+            "description": "Format of extracted content",
+            "enum": ["markdown", "text", "json"],
+            "default": "markdown"
+        },
+        "chunkSize": {
+            "title": "Chunk size (chars)",
+            "type": "integer",
+            "description": "Split content into chunks of this size. Set to 0 to disable chunking. Ideal for RAG/vector DB ingestion.",
+            "default": 1000,
+            "minimum": 0,
+            "maximum": 50000
+        },
+        "chunkOverlap": {
+            "title": "Chunk overlap (chars)",
+            "type": "integer",
+            "description": "Overlap between consecutive chunks to preserve context",
+            "default": 200,
+            "minimum": 0,
+            "maximum": 5000
+        },
+        "includeMetadata": {
+            "title": "Include metadata",
+            "type": "boolean",
+            "description": "Include page metadata (author, date, description, word count)",
+            "default": true
+        },
+        "removeNavigation": {
+            "title": "Remove navigation",
+            "type": "boolean",
+            "description": "Remove nav, header, and footer elements for cleaner content",
+            "default": true
+        },
+        "followLinks": {
+            "title": "Follow links",
+            "type": "boolean",
+            "description": "Follow links on crawled pages",
+            "default": true
+        },
+        "urlPatterns": {
+            "title": "URL patterns",
+            "type": "array",
+            "description": "Glob patterns to filter which URLs to follow (e.g., 'https://docs.example.com/**')",
+            "editor": "stringList",
+            "default": []
+        }
+    },
+    "required": ["startUrls"]
+}
